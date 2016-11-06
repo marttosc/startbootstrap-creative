@@ -87,6 +87,10 @@ aside {
         &:focus {
             color: darken(@theme-primary, 10%);
         }
+
+        img {
+          margin-top: -15px;
+        }
     }
     .navbar-header .navbar-toggle {
         font-weight: 700;
@@ -119,20 +123,30 @@ aside {
         }
     }
     @media (min-width: 768px) {
-        background-color: transparent;
+        background-color: fade(@gray-dark, 50%);
         border-color: fade(white, 30%);
         .navbar-header .navbar-brand {
-            color: fade(white, 70%);
+            color: white;
             &:hover,
             &:focus {
-                color: white;
+                color: fade(white, 70%);
+
+                img {
+                    filter: brightness(0) invert(0.7);
+                    -webkit-filter: brightness(0) invert(0.7);
+                }
+            }
+
+            img {
+              filter: brightness(0) invert(1);
+              -webkit-filter: brightness(0) invert(1);
             }
         }
         .nav > li > a,
         .nav > li > a:focus {
-            color: fade(white, 70%);
+            color: white;
             &:hover {
-                color: white;
+                color: fade(white, 70%);
             }
         }
         &.affix {
@@ -144,6 +158,11 @@ aside {
                 &:hover,
                 &:focus {
                     color: darken(@theme-primary, 10%);
+                }
+
+                img {
+                  filter: none;
+                  -webkit-filter: none;
                 }
             }
             .nav > li > a,
@@ -180,6 +199,7 @@ header {
                 margin-top: 0;
                 margin-bottom: 0;
                 font-size: 30px;
+                background-color: fade(@gray-dark, 50%);
             }
             hr {
                 margin: 30px auto;
